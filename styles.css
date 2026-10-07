@@ -1,0 +1,239 @@
+/* CSS Reset */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Design Variables */
+
+:root {
+    /* Colour System */
+    --primary-color: #0066cc;
+    --primary-dark: #004c99;
+    --text-color: #222222;
+    --background-color: #ffffff;
+    --light-blue: #eaf3ff;
+    --border-color: #99c2ff;
+
+    /* Typography System */
+    --font-family: Arial, sans-serif;
+    --base-font-size: 16px;
+    --heading-font-weight: 700;
+    --body-line-height: 1.6;
+}
+
+/* Typography */
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--base-font-size);
+    line-height: var(--body-line-height);
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+h1,
+h2,
+h3 {
+    font-weight: var(--heading-font-weight);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+/* Header */
+
+header {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation - Mobile First */
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Link Hover and Keyboard Focus */
+
+a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+/* Projects Grid - Mobile First */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.projects-grid h2 {
+    grid-column: 1 / -1;
+}
+
+.projects-grid article {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--light-blue);
+    transition: transform 0.2s ease;
+}
+
+.projects-grid article:hover {
+    transform: translateY(-3px);
+}
+
+/* Contact Form */
+
+.contact-section {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--light-blue);
+    border-radius: 10px;
+}
+
+.contact-section h2 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.contact-form fieldset {
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: var(--background-color);
+}
+
+.contact-form legend {
+    color: var(--primary-color);
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: var(--primary-dark);
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border: 2px solid var(--primary-color);
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contact-form button:hover {
+    background-color: var(--primary-dark);
+}
+
+.contact-form button:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+/* Footer */
+
+footer {
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Tablet - 768px */
+
+@media (min-width: 768px) {
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-section {
+        padding: 30px;
+    }
+}
+
+/* Desktop - 1024px */
+
+@media (min-width: 1024px) {
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
